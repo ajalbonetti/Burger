@@ -1,0 +1,32 @@
+<img src="../../public/assets/img/burger.png">
+
+<h1>Burger Time<h1>
+
+<form class="create-form" action="/create" method="POST">
+
+  <div class="form-group">
+    <label for="burgerInput">What Burger Would You Like to Eat?</label>
+    <input type="text" id="burgerInput" name="burgerInput">
+  </div>
+
+  <button type="submit">Submit</button>
+
+</form>
+
+<div class="burgerList">
+  {{#each burgers}}
+
+  <div class="singleBurgers">
+
+    <h3>{{this.id}} {{this.burger_name}}</h3>
+
+    <form action="/delete?_method=DELETE" method="POST">
+        <input type="hidden" name="id" value="{{this.id}}">
+        <button type="submit">Devour</button>
+    </form>
+
+  </div>
+  {{/each}}
+</div>
+
+
