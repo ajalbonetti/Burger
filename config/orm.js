@@ -15,7 +15,7 @@ var orm = {
 			console.log(result);
 		});
 	}, 
-	updateOne: function () {
+	updateOne: function (tableName, columnOne, newValue, columnTwo, currentValue) {
 		var queryString = 'UPDATE ' + tableName + 'SET ' + columnOne + '=' + newValue + 'WHERE ' + columnTwo + '=' + currentValue;
 		console.log(queryString);
 		connection.query(queryString, function (err, result) {
