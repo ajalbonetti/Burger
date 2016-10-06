@@ -1,4 +1,4 @@
-var orm = require('./config/orm.js');
+var orm = require('.././config/orm.js');
 
 // Select all the data from the burgers table
 orm.selectAll('burgers');

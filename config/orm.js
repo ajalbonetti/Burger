@@ -1,11 +1,12 @@
-var connection = require('/connection.js');
+var connection = require('../config/connection.js');
 
 var orm = {
-	selectAll: function (tableName) {
-		var queryString = 'SELECT * FROM ' + tableName;
-		console.log(queryString);
+
+	all: function (tableInput, cb) {
+		var queryString = 'SELECT * FROM ' + tableInput + ';';
 		connection.query(queryString, function (err, result) {
-			console.log(result);
+			if (err) throw err;
+			cb(result);
 		});
 	},
 	insertOne: function (tableName, columnOne, columnTwo, valueOne ,valueTwo) {
@@ -25,3 +26,4 @@ var orm = {
 };
 
 module.exports = orm;
+
